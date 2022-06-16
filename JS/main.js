@@ -15,6 +15,21 @@ const searchStates = async (searchText) => {
     matchList.innerHTML = "";
   }
 
+  if (searchText != matches) {
+    const html = matches
+      .map(
+        (match) =>
+          `<div class="card card-body mb-1">
+        <h4>
+          No Matched Found.
+        </h4>
+      </div>
+      `
+      )
+      .join("");
+
+    matchList.innerHTML = html;
+  }
   outputHtml(matches);
 };
 
